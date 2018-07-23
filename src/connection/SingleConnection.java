@@ -12,12 +12,12 @@ import java.sql.DriverManager;
 public class SingleConnection {
 	
 	private static String banco = "jdbc:postgresql://localhost:5432/banco-jsp?autoReconnect=true";
-	private static String password = "admin";
+	private static String password = "123456";
 	private static String user = "postgres";
 	private static Connection connection = null;
 	
 	/**
-	 * Essa chamada static serve chamar o nosso método conectar e sempre irá executar  
+	 * Essa chamada static serve chamar o método e sempre conectar  
 	 */
 	static {
 		conectar();

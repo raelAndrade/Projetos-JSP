@@ -20,7 +20,7 @@ public class DaoUsuario {
 	
 	public void salvar(BeanJsp usuario) {
 		try {
-			String sql = "insert into usuario (login, senha, nome) values(?, ?, ?)";
+			String sql = "insert into usuario(login, senha, nome) values (?, ?, ?)";
 			PreparedStatement insert = connection.prepareStatement(sql);
 			insert.setString(1, usuario.getLogin());
 			insert.setString(2, usuario.getSenha());
@@ -57,9 +57,9 @@ public class DaoUsuario {
 		return listar;
 	}
 	
-	public void delete(String login) {
+	public void delete(String id) {
 		try {
-		String sql = "delete from usuario where login = '" + login + "'";
+		String sql = "delete from usuario where id = '" + id + "'";
 		PreparedStatement preparedStatement = connection.prepareStatement(sql);
 		preparedStatement.execute();
 		
@@ -75,7 +75,7 @@ public class DaoUsuario {
 	}
 
 	public BeanJsp consultar(String login) throws Exception {
-		String sql = "select * from usuario where login = '" + login + "'";
+		String sql = "select * from usuario where id = '" + login + "'";
 		PreparedStatement preparedStatement = connection.prepareStatement(sql);
 		ResultSet resultSet = preparedStatement.executeQuery();
 		if(resultSet.next()) {

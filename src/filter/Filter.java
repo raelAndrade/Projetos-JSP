@@ -38,14 +38,10 @@ public class Filter implements javax.servlet.Filter {
 				e1.printStackTrace();
 			}
 		}
-		
-		
 	}
 
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
 		connection = SingleConnection.getConnection();
-		
 	}
-
 }
